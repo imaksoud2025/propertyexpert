@@ -853,7 +853,7 @@ export class SearchControlLoaded extends React.Component<SearchControlLoadedProp
     const types = tis.map(ti => ti.niceName).join(", ");
     const gender = tis.first().gender;
 
-    return SearchMessage._0ResultTable.niceToString().forGenderAndNumber(gender).formatWith(types);
+    return SearchMessage._0ResultTable?.niceToString().forGenderAndNumber(gender).formatWith(types);
   }
 
   getSelectedEntities(): Lite<Entity>[] {
@@ -1535,7 +1535,7 @@ export class SearchControlLoaded extends React.Component<SearchControlLoadedProp
       <tr>
         {this.props.allowSelection && <th scope="col" className="sf-small-column sf-th-selection">
           {this.props.allowSelection == true &&
-            <input type="checkbox" aria-label={SearchMessage.SelectAllResults.niceToString()} className="form-check-input" id="cbSelectAll" onChange={this.handleToggleAll} checked={this.allSelected()} />
+            <input type="checkbox" aria-label={SearchMessage.SelectAllResults?.niceToString()} className="form-check-input" id="cbSelectAll" onChange={this.handleToggleAll} checked={this.allSelected()} />
           }
         </th>
         }
